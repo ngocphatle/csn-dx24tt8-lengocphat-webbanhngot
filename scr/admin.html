@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin — WebBánhNgọt</title>
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+  <header class="admin-header">
+    <span class="logo">🍰 WebBánhNgọt</span>
+    <nav>
+      <a href="index.html">← Về trang chính</a>
+    </nav>
+  </header>
+
+
+  <div class="admin-layout">
+
+    <!-- ================================================ -->
+    <!-- PANEL TRÁI: Form thêm bánh                       -->
+    <!-- ================================================ -->
+    <div class="panel">
+      <div class="panel-header">
+        <h2>➕ Thêm bánh ngọt mới</h2>
+      </div>
+      <div class="panel-body">
+
+        <form id="cake-form" novalidate>
+
+          <!-- Tên bánh + Xuất xứ -->
+          <div class="form-row">
+            <div class="form-group">
+              <label for="f-name">Tên bánh <span class="req">*</span></label>
+              <input type="text" id="f-name" placeholder="VD: Bánh bông lan trứng muối" maxlength="80">
+              <span class="err" id="err-name"></span>
+            </div>
+            <div class="form-group">
+              <label for="f-origin">Xuất xứ <span class="req">*</span></label>
+              <input type="text" id="f-origin" placeholder="VD: Hà Nội, TP. Hồ Chí Minh" maxlength="60">
+              <span class="err" id="err-origin"></span>
+            </div>
+          </div>
+
+          <!-- Vùng miền + Thể loại -->
+          <div class="form-row">
+            <div class="form-group">
+              <label for="f-region">Vùng miền <span class="req">*</span></label>
+              <select id="f-region">
+                <option value="">-- Chọn vùng --</option>
+                <option value="Bắc">Miền Bắc</option>
+                <option value="Trung">Miền Trung</option>
+                <option value="Nam">Miền Nam</option>
+              </select>
+              <span class="err" id="err-region"></span>
+            </div>
+            <div class="form-group">
+              <label for="f-category">Thể loại <span class="req">*</span></label>
+              <select id="f-category">
+                <option value="">-- Chọn thể loại --</option>
+                <option value="Bánh dân gian">Bánh dân gian</option>
+                <option value="Bánh nướng">Bánh nướng</option>
+                <option value="Bánh hấp">Bánh hấp</option>
+                <option value="Bánh chiên">Bánh chiên</option>
+                <option value="Bánh kem">Bánh kem</option>
+                <option value="Bánh tráng miệng">Bánh tráng miệng</option>
+              </select>
+              <span class="err" id="err-category"></span>
+            </div>
+          </div>
+
+          <!-- Mô tả ngắn -->
+          <div class="form-group">
+            <label for="f-description">Mô tả ngắn <span class="req">*</span></label>
+            <textarea id="f-description" rows="2" placeholder="1-2 câu mô tả hấp dẫn về bánh..." maxlength="160"></textarea>
+            <span class="err" id="err-description"></span>
+          </div>
+
+          <!-- Giới thiệu chi tiết -->
+          <div class="form-group">
+            <label for="f-detail">Giới thiệu chi tiết <span class="req">*</span></label>
+            <textarea id="f-detail" rows="4" placeholder="Lịch sử, đặc điểm, cách thưởng thức..." maxlength="600"></textarea>
+            <span class="err" id="err-detail"></span>
+          </div>
+
+          <!-- Nguyên liệu + Dịp dùng -->
+          <div class="form-row">
+            <div class="form-group">
+              <label for="f-ingredients">
+                Nguyên liệu chính <span class="req">*</span>
+                <small>(cách nhau bởi dấu phẩy)</small>
+              </label>
+              <input type="text" id="f-ingredients" placeholder="VD: Bột mì, Trứng, Đường, Bơ">
+              <span class="err" id="err-ingredients"></span>
+            </div>
+            <div class="form-group">
+              <label for="f-occasion">Dịp dùng <span class="req">*</span></label>
+              <input type="text" id="f-occasion" placeholder="VD: Hàng ngày, Tết, Sinh nhật">
+              <span class="err" id="err-occasion"></span>
+            </div>
+          </div>
+
+          <!-- Đánh giá sao -->
+          <div class="form-group">
+            <label>Đánh giá <span class="req">*</span></label>
+            <div class="star-row" id="star-row">
+              <span class="star" data-value="1">★</span>
+              <span class="star" data-value="2">★</span>
+              <span class="star" data-value="3">★</span>
+              <span class="star" data-value="4">★</span>
+              <span class="star" data-value="5">★</span>
+              <span class="star-label" id="star-label">Chưa chọn</span>
+            </div>
+            <span class="err" id="err-rating"></span>
+          </div>
+
+          <!-- Chọn emoji -->
+          <div class="form-group">
+            <label>Emoji <span class="req">*</span></label>
+            <div class="emoji-grid" id="emoji-grid">
+              <span class="emoji-opt" data-emoji="🍰">🍰</span>
+              <span class="emoji-opt" data-emoji="🎂">🎂</span>
+              <span class="emoji-opt" data-emoji="🧁">🧁</span>
+              <span class="emoji-opt" data-emoji="🥮">🥮</span>
+              <span class="emoji-opt" data-emoji="🍮">🍮</span>
+              <span class="emoji-opt" data-emoji="🥧">🥧</span>
+              <span class="emoji-opt" data-emoji="🍩">🍩</span>
+              <span class="emoji-opt" data-emoji="🍪">🍪</span>
+              <span class="emoji-opt" data-emoji="🍫">🍫</span>
+              <span class="emoji-opt" data-emoji="🍬">🍬</span>
+              <span class="emoji-opt" data-emoji="🍭">🍭</span>
+              <span class="emoji-opt" data-emoji="🍯">🍯</span>
+              <span class="emoji-opt" data-emoji="🫓">🫓</span>
+              <span class="emoji-opt" data-emoji="🥖">🥖</span>
+              <span class="emoji-opt" data-emoji="🥐">🥐</span>
+              <span class="emoji-opt" data-emoji="🫘">🫘</span>
+              <span class="emoji-opt" data-emoji="🌰">🌰</span>
+              <span class="emoji-opt" data-emoji="🥥">🥥</span>
+              <span class="emoji-opt" data-emoji="🍌">🍌</span>
+              <span class="emoji-opt" data-emoji="🍑">🍑</span>
+              <span class="emoji-opt" data-emoji="🍓">🍓</span>
+              <span class="emoji-opt" data-emoji="🍒">🍒</span>
+              <span class="emoji-opt" data-emoji="🫐">🫐</span>
+              <span class="emoji-opt" data-emoji="🍋">🍋</span>
+              <span class="emoji-opt" data-emoji="🍊">🍊</span>
+              <span class="emoji-opt" data-emoji="🟢">🟢</span>
+              <span class="emoji-opt" data-emoji="🟡">🟡</span>
+              <span class="emoji-opt" data-emoji="🟠">🟠</span>
+              <span class="emoji-opt" data-emoji="🟤">🟤</span>
+              <span class="emoji-opt" data-emoji="🟩">🟩</span>
+            </div>
+            <span class="err" id="err-emoji"></span>
+          </div>
+
+          <!-- Chọn màu nền thẻ -->
+          <div class="form-group">
+            <label>Màu nền thẻ <span class="req">*</span></label>
+            <div class="gradient-grid" id="gradient-grid">
+              <div class="grad-swatch"
+                data-gradient="linear-gradient(135deg, #f6d365 0%, #fda085 100%)"
+                style="background: linear-gradient(135deg, #f6d365 0%, #fda085 100%)">
+              </div>
+              <div class="grad-swatch"
+                data-gradient="linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%)"
+                style="background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%)">
+              </div>
+              <div class="grad-swatch"
+                data-gradient="linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%)"
+                style="background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%)">
+              </div>
+              <div class="grad-swatch"
+                data-gradient="linear-gradient(135deg, #f7971e 0%, #ffd200 100%)"
+                style="background: linear-gradient(135deg, #f7971e 0%, #ffd200 100%)">
+              </div>
+              <div class="grad-swatch"
+                data-gradient="linear-gradient(135deg, #56ab2f 0%, #a8e063 100%)"
+                style="background: linear-gradient(135deg, #56ab2f 0%, #a8e063 100%)">
+              </div>
+              <div class="grad-swatch"
+                data-gradient="linear-gradient(135deg, #96c93d 0%, #00b09b 100%)"
+                style="background: linear-gradient(135deg, #96c93d 0%, #00b09b 100%)">
+              </div>
+              <div class="grad-swatch"
+                data-gradient="linear-gradient(135deg, #c8a96e 0%, #f5deb3 100%)"
+                style="background: linear-gradient(135deg, #c8a96e 0%, #f5deb3 100%)">
+              </div>
+              <div class="grad-swatch"
+                data-gradient="linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%)"
+                style="background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%)">
+              </div>
+              <div class="grad-swatch"
+                data-gradient="linear-gradient(135deg, #2d6a4f 0%, #52b788 100%)"
+                style="background: linear-gradient(135deg, #2d6a4f 0%, #52b788 100%)">
+              </div>
+              <div class="grad-swatch"
+                data-gradient="linear-gradient(135deg, #f5cba7 0%, #e59866 100%)"
+                style="background: linear-gradient(135deg, #f5cba7 0%, #e59866 100%)">
+              </div>
+            </div>
+
+            <!-- Xem trước thẻ bánh -->
+            <div id="card-preview" style="display: none;">
+              <p class="preview-label">Xem trước thẻ:</p>
+              <div class="card-thumb-preview" id="preview-thumb"></div>
+            </div>
+
+            <span class="err" id="err-gradient"></span>
+          </div>
+
+          <!-- Nút hành động -->
+          <div class="form-actions">
+            <button type="button" id="reset-btn" class="btn-reset">Làm mới</button>
+            <button type="submit" class="btn-submit">Thêm bánh</button>
+          </div>
+
+        </form>
+
+      </div>
+    </div>
+
+
+    <!-- ================================================ -->
+    <!-- PANEL PHẢI: Danh sách bánh đã thêm               -->
+    <!-- ================================================ -->
+    <div class="panel">
+      <div class="panel-header">
+        <h2>📋 Bánh đã thêm</h2>
+      </div>
+      <div class="panel-body">
+        <div id="custom-list"></div>
+      </div>
+    </div>
+
+  </div>
+
+
+  <footer class="admin-footer">
+    <p>WebBánhNgọt Admin · <a href="index.html">Xem trang chính</a></p>
+  </footer>
+
+  <script src="js/admin.js"></script>
+</body>
+</html>

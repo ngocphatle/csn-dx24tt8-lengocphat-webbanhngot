@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WebBánhNgọt — Bánh Ngọt Việt Nam</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header id="header">
+    <div class="header-inner">
+      <a class="logo" href="#home">🍰 WebBánhNgọt</a>
+      <button class="hamburger" id="hamburger">☰</button>
+      <nav id="nav">
+        <a href="#home"  class="nav-link">Trang chủ</a>
+        <a href="#cakes" class="nav-link">Danh sách</a>
+        <a href="#about" class="nav-link">Giới thiệu</a>
+        <a href="admin.html" class="nav-link admin-link">⚙️ Admin</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ====================================================== -->
+    <!-- TRANG CHỦ                                              -->
+    <!-- ====================================================== -->
+    <section id="page-home">
+
+      <div class="hero">
+        <div class="hero-content">
+          <h1>Khám Phá Bánh Ngọt<br><span>Việt Nam</span></h1>
+          <p>Hành trình thưởng thức <strong id="total-count">20</strong> loại bánh ngọt từ ba miền Bắc – Trung – Nam</p>
+          <div class="hero-search">
+            <input type="text" id="hero-input" placeholder="Tìm bánh yêu thích..." autocomplete="off">
+            <button id="hero-search-btn">Tìm kiếm</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="home-stats">
+        <div class="stat"><span id="stat-cakes">20</span><p>Loại bánh</p></div>
+        <div class="stat"><span>3</span><p>Vùng miền</p></div>
+        <div class="stat"><span>6</span><p>Thể loại</p></div>
+        <div class="stat"><span>100%</span><p>Thuần Việt</p></div>
+      </div>
+
+      <section class="home-featured">
+        <h2>Bánh Nổi Bật</h2>
+        <div class="card-grid" id="featured-list"></div>
+        <div class="home-cta">
+          <a href="#cakes" class="btn-primary">Xem tất cả bánh ngọt →</a>
+        </div>
+      </section>
+
+      <section class="home-categories">
+        <h2>Khám Phá Theo Thể Loại</h2>
+        <div class="category-grid" id="category-list"></div>
+      </section>
+
+    </section>
+
+
+    <!-- ====================================================== -->
+    <!-- DANH SÁCH BÁNH                                         -->
+    <!-- ====================================================== -->
+    <section id="page-cakes" class="hidden">
+
+      <div class="dest-header">
+        <h2>Danh Sách Bánh Ngọt</h2>
+      </div>
+
+      <div class="filter-bar">
+        <input type="text" id="search-input" placeholder="Tìm theo tên, nguyên liệu, xuất xứ..." autocomplete="off">
+
+        <select id="region-filter">
+          <option value="">Tất cả vùng</option>
+          <option value="Bắc">Miền Bắc</option>
+          <option value="Trung">Miền Trung</option>
+          <option value="Nam">Miền Nam</option>
+        </select>
+
+        <select id="category-filter">
+          <option value="">Tất cả thể loại</option>
+          <option value="Bánh dân gian">Bánh dân gian</option>
+          <option value="Bánh nướng">Bánh nướng</option>
+          <option value="Bánh hấp">Bánh hấp</option>
+          <option value="Bánh chiên">Bánh chiên</option>
+          <option value="Bánh kem">Bánh kem</option>
+          <option value="Bánh tráng miệng">Bánh tráng miệng</option>
+        </select>
+
+        <select id="sort-filter">
+          <option value="default">Mặc định</option>
+          <option value="name-asc">Tên A → Z</option>
+          <option value="name-desc">Tên Z → A</option>
+          <option value="rating-desc">Đánh giá cao nhất</option>
+          <option value="rating-asc">Đánh giá thấp nhất</option>
+        </select>
+
+        <button id="reset-btn" class="hidden">✕ Xóa lọc</button>
+      </div>
+
+      <div class="result-info" id="result-info">
+        Tìm thấy <strong id="result-count">0</strong> loại bánh
+      </div>
+
+      <div class="card-grid" id="cake-list"></div>
+
+      <div id="empty-state" class="empty-state hidden">
+        <div class="empty-icon">🔍</div>
+        <h3>Không tìm thấy bánh phù hợp</h3>
+        <p>Thử thay đổi từ khóa hoặc bộ lọc của bạn</p>
+        <button id="empty-reset-btn" class="btn-primary">Xóa bộ lọc</button>
+      </div>
+
+      <div class="pagination" id="pagination"></div>
+
+    </section>
+
+
+    <!-- ====================================================== -->
+    <!-- CHI TIẾT BÁNH                                          -->
+    <!-- ====================================================== -->
+    <section id="page-detail" class="hidden">
+      <div class="detail-page">
+
+        <button class="back-btn" id="back-btn">← Quay lại</button>
+
+        <div class="detail-hero" id="detail-hero">
+          <div class="detail-emoji" id="detail-emoji"></div>
+          <div class="detail-hero-info">
+            <span class="detail-badge" id="detail-badge"></span>
+            <h1 id="detail-name"></h1>
+            <p id="detail-desc-short"></p>
+          </div>
+        </div>
+
+        <div class="detail-body">
+
+          <div class="detail-meta">
+            <div class="meta-item">
+              <span class="meta-label">Vùng miền</span>
+              <span id="detail-region"></span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Xuất xứ</span>
+              <span id="detail-origin"></span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Dịp dùng</span>
+              <span id="detail-occasion"></span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Đánh giá</span>
+              <span class="stars" id="detail-rating"></span>
+            </div>
+          </div>
+
+          <div class="detail-section">
+            <h3>Giới thiệu</h3>
+            <p id="detail-content"></p>
+          </div>
+
+          <div class="detail-section">
+            <h3>Nguyên liệu chính</h3>
+            <div class="ingredient-list" id="detail-ingredients"></div>
+          </div>
+
+          <div class="detail-nav">
+            <a class="nav-prev" id="detail-prev" href="#"></a>
+            <a class="nav-next" id="detail-next" href="#"></a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ====================================================== -->
+    <!-- GIỚI THIỆU                                             -->
+    <!-- ====================================================== -->
+    <section id="page-about" class="hidden">
+      <div class="about-page">
+
+        <div class="about-hero">
+          <h1>Về WebBánhNgọt 🍰</h1>
+          <p>Ứng dụng web đơn trang giới thiệu các loại bánh ngọt Việt Nam</p>
+        </div>
+
+        <div class="about-body">
+          <div class="about-section">
+            <h3>🎯 Mục tiêu</h3>
+            <p>WebBánhNgọt được xây dựng nhằm giới thiệu và bảo tồn di sản ẩm thực bánh ngọt Việt Nam — từ những loại bánh dân gian truyền thống đến các loại bánh hiện đại đang được yêu thích.</p>
+          </div>
+          <div class="about-section">
+            <h3>🍰 Nội dung</h3>
+            <p>Ứng dụng cung cấp thông tin về <span id="about-cake-count">20</span> loại bánh ngọt tiêu biểu từ ba miền Bắc – Trung – Nam, bao gồm xuất xứ, nguyên liệu, cách thưởng thức và đánh giá.</p>
+          </div>
+          <div class="about-section">
+            <h3>⚙️ Công nghệ</h3>
+            <p>Xây dựng bằng HTML5, CSS3 và JavaScript thuần (Vanilla JS). Không sử dụng framework hay thư viện ngoài. Dữ liệu tĩnh, chạy hoàn toàn trên trình duyệt.</p>
+          </div>
+          <div class="about-section">
+            <h3>👨‍💻 Sinh viên thực hiện</h3>
+            <p>Đặng Ngọc Phát — Đồ án môn Cơ Sở Ngành</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <footer>
+    <div class="footer-inner">
+      <p>🍰 WebBánhNgọt — Khám phá ẩm thực bánh ngọt Việt Nam</p>
+      <p>Đồ án môn học · Đặng Ngọc Phát · <a href="admin.html">⚙️ Quản trị</a></p>
+    </div>
+  </footer>
+
+
+  <!-- Template HTML để tạo thẻ bánh (không hiển thị) -->
+  <template id="card-template">
+    <div class="card">
+      <div class="card-thumb">
+        <span class="card-emoji"></span>
+      </div>
+      <div class="card-body">
+        <div class="card-meta">
+          <span class="card-region"></span>
+          <span class="card-category"></span>
+        </div>
+        <h3 class="card-title"></h3>
+        <p class="card-desc"></p>
+        <div class="card-footer">
+          <span class="card-stars"></span>
+          <span class="card-rating"></span>
+        </div>
+      </div>
+    </div>
+  </template>
+
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

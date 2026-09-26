@@ -11,6 +11,7 @@ const CAKES = [
     occasion: 'Hàng ngày, tráng miệng',
     rating: 4.8,
     gradient: 'linear-gradient(135deg, #f6d365 0%, #fda085 100%)',
+    image: 'images/banh-flan.png',
     emoji: '🍮'
   },
   {
@@ -25,6 +26,7 @@ const CAKES = [
     occasion: 'Hàng ngày, buổi sáng - chiều',
     rating: 4.3,
     gradient: 'linear-gradient(135deg, #f9d423 0%, #ff4e50 100%)',
+    image: 'images/banh-bong-lan.png',
     emoji: '🎂'
   },
   {
@@ -39,6 +41,7 @@ const CAKES = [
     occasion: 'Tráng miệng, quà tặng',
     rating: 4.7,
     gradient: 'linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%)',
+    image: 'images/banh-su-kem.png',
     emoji: '🧁'
   },
   {
@@ -53,6 +56,7 @@ const CAKES = [
     occasion: 'Tết Trung thu',
     rating: 4.9,
     gradient: 'linear-gradient(135deg, #f7971e 0%, #ffd200 100%)',
+    image: 'images/banh-trung-thu.png',
     emoji: '🥮'
   },
   {
@@ -67,6 +71,7 @@ const CAKES = [
     occasion: 'Quà biếu, Tết',
     rating: 4.6,
     gradient: 'linear-gradient(135deg, #d4a76a 0%, #8b5e3c 100%)',
+    image: 'images/banh-pia.png',
     emoji: '🥧'
   },
   {
@@ -81,6 +86,7 @@ const CAKES = [
     occasion: 'Hàng ngày, cúng giỗ',
     rating: 4.4,
     gradient: 'linear-gradient(135deg, #56ab2f 0%, #a8e6cf 100%)',
+    image: 'images/banh-da-lon.png',
     emoji: '🟩'
   },
   {
@@ -95,6 +101,7 @@ const CAKES = [
     occasion: 'Hàng ngày, quà vặt',
     rating: 4.2,
     gradient: 'linear-gradient(135deg, #f7e062 0%, #f9a825 100%)',
+    image: 'images/banh-chuoi-hap.png',
     emoji: '🍌'
   },
   {
@@ -109,6 +116,7 @@ const CAKES = [
     occasion: 'Hàng ngày, buổi sáng - chiều',
     rating: 4.5,
     gradient: 'linear-gradient(135deg, #c8a96e 0%, #f5deb3 100%)',
+    image: 'images/banh-ran.png',
     emoji: '🍩'
   },
   {
@@ -123,6 +131,7 @@ const CAKES = [
     occasion: 'Quà vặt, hàng ngày',
     rating: 4.3,
     gradient: 'linear-gradient(135deg, #f7971e 0%, #ffd200 100%)',
+    image: 'images/banh-cam.png',
     emoji: '🟠'
   },
   {
@@ -137,6 +146,7 @@ const CAKES = [
     occasion: 'Bữa sáng, quà vặt',
     rating: 4.4,
     gradient: 'linear-gradient(135deg, #e8c99a 0%, #c8a96e 100%)',
+    image: 'images/banh-tieu.png',
     emoji: '🫓'
   },
   {
@@ -151,6 +161,7 @@ const CAKES = [
     occasion: 'Tết Hàn thực, cúng giỗ',
     rating: 4.6,
     gradient: 'linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%)',
+    image: 'images/banh-troi.png',
     emoji: '⚪'
   },
   {
@@ -165,6 +176,7 @@ const CAKES = [
     occasion: 'Cưới hỏi, Tết, mùa thu',
     rating: 4.7,
     gradient: 'linear-gradient(135deg, #56ab2f 0%, #a8e063 100%)',
+    image: 'images/banh-com.png',
     emoji: '🟢'
   },
   {
@@ -179,6 +191,7 @@ const CAKES = [
     occasion: 'Lễ cưới, hỏi',
     rating: 4.5,
     gradient: 'linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)',
+    image: 'images/banh-xu-xe.png',
     emoji: '💛'
   },
   {
@@ -193,6 +206,7 @@ const CAKES = [
     occasion: 'Hàng ngày, ăn vặt',
     rating: 4.5,
     gradient: 'linear-gradient(135deg, #fff9c4 0%, #f9a825 100%)',
+    image: 'images/banh-beo.png',
     emoji: '🍚'
   },
   {
@@ -207,6 +221,7 @@ const CAKES = [
     occasion: 'Quà vặt, hàng ngày',
     rating: 4.3,
     gradient: 'linear-gradient(135deg, #c8a96e 0%, #f5deb3 100%)',
+    image: 'images/banh-khoai-mi-nuong.png',
     emoji: '🟤'
   },
   {
@@ -221,6 +236,7 @@ const CAKES = [
     occasion: 'Sinh nhật, kỷ niệm',
     rating: 4.9,
     gradient: 'linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%)',
+    image: 'images/banh-kem-sinh-nhat.png',
     emoji: '🎂'
   },
   {
@@ -235,6 +251,7 @@ const CAKES = [
     occasion: 'Quà tặng, sinh nhật, hàng ngày',
     rating: 4.6,
     gradient: 'linear-gradient(135deg, #96c93d 0%, #00b09b 100%)',
+    image: 'images/banh-cupcake-matcha.png',
     emoji: '🍵'
   },
   {
@@ -249,6 +266,7 @@ const CAKES = [
     occasion: 'Tết Nguyên đán',
     rating: 4.7,
     gradient: 'linear-gradient(135deg, #2d6a4f 0%, #52b788 100%)',
+    image: 'images/banh-tet-ngot.png',
     emoji: '🫘'
   },
   {
@@ -263,6 +281,7 @@ const CAKES = [
     occasion: 'Bữa sáng, hàng ngày',
     rating: 4.5,
     gradient: 'linear-gradient(135deg, #e8c99a 0%, #d4a76a 100%)',
+    image: 'images/banh-mi-ngot.png',
     emoji: '🥖'
   },
   {
@@ -277,6 +296,7 @@ const CAKES = [
     occasion: 'Quà biếu, du lịch, hàng ngày',
     rating: 4.4,
     gradient: 'linear-gradient(135deg, #f5cba7 0%, #e59866 100%)',
+    image: 'images/banh-dua-nuong.png',
     emoji: '🥥'
   }
 ];

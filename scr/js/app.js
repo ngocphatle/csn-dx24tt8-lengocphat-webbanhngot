@@ -337,7 +337,17 @@ function showDetail(id) {
 
   getEl('page-detail').classList.remove('hidden');
 
-  getEl('detail-emoji').textContent      = cake.emoji;
+  var detailVisual = getEl('detail-emoji');
+  detailVisual.textContent = '';
+  if (cake.image) {
+    var detailImage = document.createElement('img');
+    detailImage.className = 'detail-image';
+    detailImage.src = cake.image;
+    detailImage.alt = cake.name;
+    detailVisual.appendChild(detailImage);
+  } else {
+    detailVisual.textContent = cake.emoji;
+  }
   getEl('detail-hero').style.background  = cake.gradient;
   getEl('detail-badge').textContent      = cake.category;
   getEl('detail-name').textContent       = cake.name;
@@ -401,15 +411,24 @@ function createCard(cake) {
   var card = document.createElement('div');
   card.className = 'card';
 
-  // --- Phần hình (gradient + emoji) ---
+  // --- Ảnh bánh; giữ emoji cho bánh tự thêm chưa có ảnh ---
   var thumb = document.createElement('div');
   thumb.className       = 'card-thumb';
   thumb.style.background = cake.gradient;
 
-  var emojiSpan = document.createElement('span');
-  emojiSpan.className = 'card-emoji';
-  emojiSpan.textContent = cake.emoji;
-  thumb.appendChild(emojiSpan);
+  if (cake.image) {
+    var image = document.createElement('img');
+    image.className = 'card-image';
+    image.src = cake.image;
+    image.alt = cake.name;
+    image.loading = 'lazy';
+    thumb.appendChild(image);
+  } else {
+    var emojiSpan = document.createElement('span');
+    emojiSpan.className = 'card-emoji';
+    emojiSpan.textContent = cake.emoji;
+    thumb.appendChild(emojiSpan);
+  }
 
   if (cake.isCustom) {
     var badge = document.createElement('span');

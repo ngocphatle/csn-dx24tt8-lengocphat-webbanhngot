@@ -3,7 +3,7 @@
 Ứng dụng web đơn trang (SPA) giới thiệu các loại bánh ngọt truyền thống và hiện đại của Việt Nam.
 
 **Sinh viên:** Lê Ngọc Phát
-**Repo:** `webbanhngot`
+**Repo:** `csn-dx24tt8-lengocphat-webbanhngot`
 
 ---
 
@@ -25,19 +25,20 @@ HTML5 · CSS3 · JavaScript thuần (Vanilla JS) — không dùng framework hay 
 
 ## Cách chạy
 
-1. Mở thư mục `scr/` bằng **VS Code Live Server**
-2. Hoặc mở thẳng `scr/index.html` trên trình duyệt
-3. Trang admin: `scr/admin.html`
+1. Mở thư mục `src/` bằng **VS Code Live Server**
+2. Hoặc mở thẳng `src/index.html` trên trình duyệt
+3. Trang admin: `src/admin.html`
 
 ## Cấu trúc
 
 ```
-scr/
+src/
 ├── index.html
 ├── admin.html
 ├── css/
 │   ├── style.css
 │   └── admin.css
+├── images/         ← 20 ảnh PNG theo tên bánh
 └── js/
     ├── data.js      ← CAKES[] — 20 loại bánh tĩnh
     ├── app.js       ← SPA router, render, filter, sort, phân trang

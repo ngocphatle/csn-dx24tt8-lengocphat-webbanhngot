@@ -2,7 +2,7 @@
 
 Ứng dụng web đơn trang (SPA) giới thiệu các loại bánh ngọt truyền thống và hiện đại của Việt Nam.
 
-**Sinh viên:** Nguyễn Duy Trúc
+**Sinh viên:** Lê Ngọc Phát
 **Repo:** `webbanhngot`
 
 ---
